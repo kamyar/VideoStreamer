@@ -14,3 +14,9 @@ VideoStreamer::VideoStreamer(QObject *parent) : QObject(parent)
 
 }
 
+QString VideoStreamer::echo(QString msg)
+{
+    qDebug() << msg;
+    return msg;
+}
+

@@ -11,6 +11,9 @@
 #define VIDEOSTREAMER_H
 
 #include <QObject>
+#include <QString>
+#include <QDebug>
+
 
 class VideoStreamer : public QObject
 {
@@ -21,6 +24,7 @@ public:
 signals:
 
 public slots:
+    QString echo(QString msg);
 };
 
 #endif // VIDEOSTREAMER_H
