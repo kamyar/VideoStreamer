@@ -10,6 +10,7 @@ QT       -= gui
 TARGET = VideoStreamer
 CONFIG   += console
 CONFIG   -= app_bundle
+CONFIG   += c++11
 
 TEMPLATE = app
 
@@ -22,3 +23,6 @@ SOURCES += *.cpp            \
 
 HEADERS += *.h              \
             libs/*.h
+
+INCLUDEPATH += /usr/include/opencv
+LIBS += -lswscale -lavcodec -lavformat -lavutil -lopencv_core -lopencv_highgui -lopencv_video

@@ -33,8 +33,9 @@ int main(int argc, char *argv[])
                    &channel, &QWebChannel::connectTo);
 
     // setup the dialog and publish it to the QWebChannel
-    QSharedPointer<VideoStreamer> streamer_i = QSharedPointer<VideoStreamer>::create(new VideoStreamer(&app));
-    channel.registerObject("chatserver", streamer_i.data());
+    VideoStreamer streamer_i("/home/kamyar/projects/VideoStreamer/video_files/drop.avi", 30, &app);
+    channel.registerObject("videoStreamer", &streamer_i);
+    streamer_i.run();
 
     return app.exec();
 }
